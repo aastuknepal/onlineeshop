@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+About | Electronics Nepal
+{% endblock %}
+
+{% block body %}
+
+<div class="shadow p-2 rounded" style="background-color:#e9ecef; color:black">
+    <div class="row text-center font-weight-bold">
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <p><a href="/products">All Products</a></p>
+        </div>
+        {% for category in categories %}
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <p><a href="/products/?category={{category.id}}">{{category.category_name}}</a></p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="about-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="noo-sh-title">We are <span>Electronics Nepal</span></h2>
+                <p>"Discover the ultimate tech destination in Nepal! Our Nepali electronic shop offers a diverse range of cutting-edge smartphones and laptops to elevate your digital experience. Whether you're seeking sleek designs, powerful performance, or the latest innovations, we've got you covered. Explore our collection today and unlock a world of possibilities in the palm of your hand."</p>
+                <p>"We deliver all over Nepal within one week."</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="banner-frame"> <img class="img-thumbnail img-fluid" src="{% static 'images/store.jpg' %}" alt="" width="540px"/>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Trusted</h3>
+                    <p>We are trusted by more than thousands of happy customers. </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Professional</h3>
+                    <p>We are constantly working on developing our professionalship. Ans assure you best quality possible. </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Expert</h3>
+                    <p>We are expert in electronic gadget field. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
